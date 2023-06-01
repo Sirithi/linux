@@ -1,4 +1,28 @@
 #!/bin/bash
 
-# Studentnaam:
-# Studentnummer:
+# Studentnaam: Floris Weijns
+# Studentnummer: 2119859
+
+if [ $# -eq 0 ]
+then
+    echo "Usage: newproj <foldername>" >&2
+    exit 1
+fi
+
+foldername=$1
+
+if [ -d "$foldername" ]
+then
+    echo "Folder already exists" >&2
+    exit 1
+fi
+
+mkdir "$foldername"
+
+cp ~/etc/Makefile "$foldername"/Makefile
+
+cmthdr ~/etc/main.cpp > "$foldername"/main.cpp
+
+content=$(<"$foldername/main.cpp")
+
+echo "$content" | sed -e "s/{PROJECT}/$foldername/g" > "$foldername"/main.cpp

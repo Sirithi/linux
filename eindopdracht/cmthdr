@@ -1,4 +1,32 @@
 #!/bin/bash
 
-# Studentnaam:
-# Studentnummer:
+# Studentnaam: Floris Weijns
+# Studentnummer: 2119859
+info_file=~/etc/intro
+company="HighWindsLLC"
+
+if [ $# -eq 0 ]
+then
+    echo "Usage: ./cmthdr <filename>" >&2
+    exit 1
+fi
+
+filename=$(basename $1)
+content=$(<"$info_file")
+
+updated_content=$(echo "$content" | sed "s/{FILE}/$filename/g")
+
+projectname=$(basename $(pwd))
+
+updated_content=$(echo "$updated_content" | sed "s/{PROJECT}/$projectname/g")
+updated_content=$(echo "$updated_content" | sed "s/{USER}/$USER/g")
+
+current_date=$(date +"%d-%m-%Y")
+updated_content=$(echo "$updated_content" | sed "s/{DATE}/$current_date/g")
+
+year=$(date +"%Y")
+updated_content=$(echo "$updated_content" | sed "s/{YEAR}/$year/g")
+
+updated_content=$(echo "$updated_content" | sed "s/{COMPANY}/$company/g")
+
+echo -e "$updated_content\n$(cat "$1")"

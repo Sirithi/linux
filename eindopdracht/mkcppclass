@@ -1,4 +1,45 @@
 #!/bin/bash
 
-# Studentnaam:
-# Studentnummer:
+# Studentnaam: Floris Weijns
+# Studentnummer: 2119859
+
+#if 1 or 2 arguments are received continue else exit 1 and echo to stderr
+if [ $# -ne 1 ] && [ $# -ne 2 ]
+    then
+        echo "Usage: mkcppclass <classname> [baseclass]" >&2
+        exit 1
+fi
+
+filename=$1
+
+if [ $# -eq 1 ]
+    then
+        touch $filename.cpp
+        touch $filename.hpp
+        cat ~/etc/"baseclass.cpp" >> $filename.cpp
+        cat ~/etc/"baseclass.hpp" >> $1.hpp
+        cmthdr $filename.cpp > temp_file
+        mv temp_file $filename.cpp
+        cmthdr $filename.hpp > temp_file
+        mv temp_file $filename.hpp
+fi
+
+if [ $# -eq 2 ]
+    then
+        
+        basefile=$2
+        touch temp_file1
+        touch temp_file2
+        cp ~/etc/"$basefile.cpp" "$filename.cpp"
+        cp ~/etc/"$basefile.hpp" "$filename.hpp"
+        cmthdr $filename.cpp > temp_file1
+        cmthdr $filename.hpp > temp_file2
+        mv temp_file1 "$filename.cpp"
+        mv temp_file2 "$filename.hpp"
+
+        sed -i "s/{BASE}/$basefile/g" "$filename.cpp"
+        sed -i "s/{BASE}/$basefile/g" "$filename.hpp"
+fi
+
+sed -i "s/{CLASS}/$filename/g" "$filename.cpp"
+sed -i "s/{CLASS}/$filename/g" "$filename.hpp"
