@@ -1,0 +1,7 @@
+total 0
+-rwxrwxrwx 1 sirith sirith 128 May 16 12:52 gereedschap.txt
+-rwxrwxrwx 1 sirith sirith 138 May  8 12:44 limerick.txt
+-rwxrwxrwx 1 sirith sirith   0 May 16 12:56 listing.txt
+-rwxrwxrwx 1 sirith sirith  23 May  8 13:28 myfile.txt
+-rwxrwxrwx 1 sirith sirith 170 May  8 13:17 servies.txt
+-rwxrwxrwx 1 sirith sirith  45 May  8 12:51 voorbeeld.txt

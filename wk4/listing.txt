@@ -1,0 +1,8 @@
+total 952
+-rwxrwxrwx 1 sirith sirith   2212 Apr 13  2020 data.csv
+-rwxrwxrwx 1 sirith sirith  16878 Apr 13  2020 index.html
+-rwxrwxrwx 1 sirith sirith    131 Apr 13  2020 lines.txt
+-rwxrwxrwx 1 sirith sirith      0 May 22 13:33 listing.txt
+-rwxrwxrwx 1 sirith sirith 468489 May 22 11:39 unix.txt
+-rwxrwxrwx 1 sirith sirith 479037 Apr 13  2020 windows.txt
+-rwxrwxrwx 1 sirith sirith    550 Apr 13  2020 words.txt

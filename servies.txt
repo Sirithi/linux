@@ -1,0 +1,16 @@
+1	theepot
+6	dinerbordje
+6	theeschotel
+5	mok
+10	eetlepel
+10	mes
+10	vork
+6	theelepel
+6	theekopje
+2	groenteschaal
+6	gebaksbord
+2	juskom
+6	ontbijtbord
+4	wijnglas
+7	bierglas
+
